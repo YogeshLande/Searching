@@ -1,0 +1,52 @@
+//Linear Search Search the element in your array and return the index
+//Take the array size from the user also array element & searched element
+
+
+import java.util.*;
+public class SearchingDemo {
+
+    static int Search(int arr[],int SearchEle){
+
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==SearchEle){
+                return i;
+            }
+
+        }
+        return -1;
+
+
+    }
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of array");
+        int Size = sc.nextInt();
+
+        System.out.println("Enter the Element of Array");
+
+        int arr[] = new int[Size];
+
+        for(int i = 0;i<arr.length;i++){
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("Enter a Searched Element");
+        int SearchEle = sc.nextInt();
+
+      int retvalue =  Search(arr,SearchEle);
+
+
+      if(retvalue==-1){
+          System.out.println("Element Not Found");
+      }
+      else{
+          System.out.println("Element Found at Index "+retvalue);
+
+      }
+
+        
+
+
+
+    }
+}
