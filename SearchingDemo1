@@ -1,0 +1,49 @@
+//Binary Search   Search the element using binary search
+
+
+import java.util.Scanner;
+
+public class SearchingDemo1 {
+
+
+    int binarysearch(int arr[],int Search){
+        int start =0;
+        int end = arr.length-1;
+
+        while (start<=end) {
+
+            int Mid = start + end / 2;
+
+            if (Mid == Search) {
+                return Mid;
+            }
+            if (Mid > Search) {
+                end = Mid - 1;
+            }
+            if (Mid < Search) {
+                start = Mid + 1;
+            }
+        }
+        return -1;
+
+    }
+    public static void main(String[]args){
+        int arr[] = new int[]{4,7,11,24,35,57,75,87};
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter The Searching Element : ");
+
+        int Search = sc.nextInt();
+        SearchingDemo1 obj = new SearchingDemo1();
+
+        int index = obj.binarysearch(arr, Search);
+
+        if(index==-1){
+            System.out.println("Element Not Found");
+        }
+        else {
+            System.out.println("Element found at index "+index);
+        }
+
+    }
+}
